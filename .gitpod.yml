@@ -1,0 +1,13 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: ./setup.sh
+    command: docker-compose up -d
+ports:
+  - port: 9092 # Kafka Broker
+    onOpen: open-preview
+  - port: 8088 # ksqlDB Server
+    onOpen: open-preview
+  - port: 5140 # Syslog-ng
+    onOpen: ignore
